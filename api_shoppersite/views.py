@@ -5,7 +5,17 @@ from shoppersite.models import Customer
 from .serializers import CustomerSerializer
 
 @api_view(['GET'])
-def getData(request):
+def apiOverview(request):
+    api_overview = {
+        'Customer List': '/customer_list/',
+        'Detail Customer View': '/customer_detail/<str:pk>/',
+        'Create Customer': '/create_customer/',
+        'Update Customer': '/update_customer/<str:pk>/',
+    }
+    return Response(api_overview)
+
+@api_view(['GET'])
+def customerList(request):
     customers = Customer.objects.all()
     serializer = CustomerSerializer(customers, many = True)
     return Response(serializer.data)
