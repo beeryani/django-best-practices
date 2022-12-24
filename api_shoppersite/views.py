@@ -17,12 +17,26 @@ def apiOverview(request):
 @api_view(['GET'])
 def customerList(request):
     customers = Customer.objects.all()
-    serializer = CustomerSerializer(customers, many = True)
+    serializer = CustomerSerializer(customers, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def customerDetail(request, pk):
+    customer = Customer.objects.get(id=pk)
+    serializer = CustomerSerializer(customer, many=False)
     return Response(serializer.data)
 
 @api_view(['POST'])
 def createCustomer(request):
     serializer = CustomerSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['GET','POST'])
+def updateCustomer(request, pk):
+    customer = Customer.objects.get(id=pk)
+    serializer = CustomerSerializer(data=request.data, instance=customer)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
