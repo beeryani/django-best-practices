@@ -1,9 +1,0 @@
-{% if customer_list %}
-    <ul>
-    {% for customer in customer_list %}
-        <li>{{customer.name}} {{customer.phone_number}}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No customers are available.</p>
-{% endif %}
