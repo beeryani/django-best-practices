@@ -30,3 +30,10 @@ You can now run the development server:
     $ python manage.py runserver
 
 [Link to development log](https://docs.google.com/document/d/1NJvoInKN770gSGlecXWeYf5bwE6KfLJtdPetOdZpKEk/edit#)
+
+## Index endpoint view
+
+All the end points to access, create and update can be navigated using the reference image of the index endpoint.
+
+![image](https://user-images.githubusercontent.com/38065503/209499256-88a4e8e0-2440-4ccb-a525-d41d45d45e0a.png)
+
