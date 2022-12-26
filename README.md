@@ -31,9 +31,22 @@ You can now run the development server:
 
 [Link to development log](https://docs.google.com/document/d/1NJvoInKN770gSGlecXWeYf5bwE6KfLJtdPetOdZpKEk/edit#)
 
-## Index endpoint view
+## How to use this API?
 
-All the end points to access, create and update can be navigated using the reference image of the index endpoint.
+Use the following to view, create and update `Customer` name and phone number:
 
-![image](https://user-images.githubusercontent.com/38065503/209499256-88a4e8e0-2440-4ccb-a525-d41d45d45e0a.png)
+View all recent customer entries:
 
+    $ http://127.0.0.1:8000/customer_list/
+
+View specific customer entry:
+
+    $ http://127.0.0.1:8000/customer_detail/<customer_id>/
+
+Create customer entry:
+
+    $ http://127.0.0.1:8000/create_customer/
+
+Update customer entry:
+
+    $ http://127.0.0.1:8000/cupdate_customer/<customer_id>/
