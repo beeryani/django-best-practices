@@ -8,8 +8,8 @@ The aim of this project is to build a simple REST API using Django framework.
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone https://github.com/praty-1698/django-CRUD-API-boilerplate.git
-    $ cd django-CRUD-API-boilerplate
+    $ git clone https://github.com/praty-1698/<NEW-REPO>
+    $ cd NEW-REPO
     
 Activate the virtualenv for your project.
 
@@ -28,25 +28,3 @@ Then simply apply the migrations:
 You can now run the development server:
 
     $ python manage.py runserver
-
-[Link to development log](https://docs.google.com/document/d/1NJvoInKN770gSGlecXWeYf5bwE6KfLJtdPetOdZpKEk/edit#)
-
-## How to use this API?
-
-Use the following to view, create and update `Customer` name and phone number:
-
-View all recent customer entries:
-
-    $ http://127.0.0.1:8000/customer_list/
-
-View specific customer entry:
-
-    $ http://127.0.0.1:8000/customer_detail/<customer_id>/
-
-Create customer entry:
-
-    $ http://127.0.0.1:8000/create_customer/
-
-Update customer entry:
-
-    $ http://127.0.0.1:8000/cupdate_customer/<customer_id>/

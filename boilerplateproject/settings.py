@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "rest_framework",
-    "api_shoppersite.apps.ApiShoppersiteConfig",
+    "boilerplateapp.apps.BoilerplateappConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
