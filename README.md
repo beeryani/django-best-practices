@@ -1,4 +1,4 @@
-# MyShopperSite API
+# Boilerplate CRUD API
 
 ## Development Interview Round
 
@@ -8,8 +8,8 @@ The aim of this project is to build a simple REST API using Django framework.
 
 First clone the repository from Github and switch to the new directory:
 
-    $ git clone https://github.com/praty-1698/MyShopperSite.git
-    $ cd myshoppersite
+    $ git clone https://github.com/praty-1698/django-CRUD-API-boilerplate.git
+    $ cd django-CRUD-API-boilerplate
     
 Activate the virtualenv for your project.
 
