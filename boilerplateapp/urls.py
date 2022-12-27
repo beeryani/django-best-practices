@@ -7,4 +7,5 @@ urlpatterns = [
     path("customer_detail/<str:pk>/", views.customerDetail),
     path("create_customer/", views.createCustomer),
     path("update_customer/<str:pk>/", views.updateCustomer),
+    path("delete_customer/<str:pk>/", views.deleteCustomer),
 ]

@@ -45,3 +45,8 @@ def updateCustomer(request, pk):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+@api_view(["DELETE"])
+def deleteCustomer(request, pk):
+    Customer.objects.get(id=pk).delete()
+    return Response()
