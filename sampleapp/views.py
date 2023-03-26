@@ -1,4 +1,6 @@
+from rest_framework import permissions, status
 from rest_framework.decorators import api_view
+from rest_framework.generics import CreateAPIView
 from rest_framework.response import Response
 
 from .models import Customer
@@ -11,7 +13,6 @@ def apiOverview(request):
         "Customer List": "/customer_list/",
         "Detail Customer View": "/customer_detail/<str:pk>/",
         "Create Customer": "/create_customer/",
-        "Update Customer": "/update_customer/<str:pk>/",
     }
     return Response(api_overview)
 
@@ -30,24 +31,17 @@ def customerDetail(request, pk):
     return Response(serializer.data)
 
 
-@api_view(["POST"])
-def createCustomer(request):
-    serializer = CustomerSerializer(data=request.data)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
+class CreateCustomer(CreateAPIView):
+    queryset = Customer.objects.all()
+    serializer = CustomerSerializer
+    permission_classes = [permissions.AllowAny]
 
+    def post(self, request, format=None):
+        serializer = CustomerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(["GET", "POST"])
-def updateCustomer(request, pk):
-    customer = Customer.objects.get(id=pk)
-    serializer = CustomerSerializer(data=request.data, instance=customer)
-    if serializer.is_valid():
-        serializer.save()
-    return Response(serializer.data)
-
-
-@api_view(["DELETE"])
-def deleteCustomer(request, pk):
-    Customer.objects.get(id=pk).delete()
-    return Response()
+    def get_serializer_class(self):
+        return CustomerSerializer
