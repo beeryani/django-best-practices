@@ -1,0 +1,25 @@
+version: '3.8'
+volumes:
+  postgres_data:
+
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    container_name: django-api
+    depends_on:
+      - db
+    command: python manage.py runserver 0.0.0.0:8000 --settings=settings.development
+  db:
+    image: postgres:13.0-alpine
+    restart: always
+    ports:
+      - "5482:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./.env
