@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "rest_framework",
-    "boilerplateapp.apps.BoilerplateappConfig",
+    "sampleapp.apps.SampleappConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "boilerplateproject.urls"
+ROOT_URLCONF = "sampleproject.urls"
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "boilerplateproject.wsgi.application"
+WSGI_APPLICATION = "sampleproject.wsgi.application"
 
 
 # Database
