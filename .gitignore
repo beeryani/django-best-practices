@@ -6,6 +6,7 @@ db.sqlite3
 node_modules
 scripts/flow/*/.flowconfig
 .flowconfig
+sampleproject/settings.py
 *~
 *.pyc
 .grunt
